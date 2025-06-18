@@ -1,206 +1,98 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Italien 2027 – Unsere Spendenwand</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            background: #e6f0ff url("Basdorf-logo.jpg") no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            color: #c00000;
-            font-size: 3rem;
-            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            margin: 20px 0;
-        }
-
-        #grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 4px;
-            width: 95%;
-            margin: 20px auto;
-            padding: 10px;
-            background: #ffffff;
-            border: 4px solid #002060;
-            border-radius: 12px;
-        }
-
-        .tile {
-            background-color: #d0e7ff;
-            border: 1px solid #999;
-            padding: 20px;
-            cursor: pointer;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            word-break: break-word;
-        }
-
-        .tile:hover {
-            background-color: #a0c4ff;
-            transform: scale(1.05);
-        }
-
-        .tile-blocked {
-            background-color: #ccc;
-            border: 2px solid #444;
-            cursor: default;
-            pointer-events: none;
-            padding: 0 !important;
-        }
-
-        .tile-blocked img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .big-tile {
-            background-color: #ffd700;
-            font-weight: bold;
-            font-size: 1rem;
-            border: 2px solid #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .intro-text {
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px 30px;
-            border-radius: 12px;
-            color: #fff;
-            text-align: left;
-            font-size: 16px;
-            line-height: 1.6;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .intro-text h2, .intro-text h3 {
-            color: #ffffff;
-            margin-top: 20px;
-        }
-
-        .intro-text ul {
-            padding-left: 20px;
-        }
-
-        .intro-text p {
-            font-size: 18px;
-            color: #2fb0e8;
-            line-height: 1.7;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-            margin-bottom: 16px;
-        }
-
-        .counter-box {
-            margin: 20px auto;
-            padding: 15px 25px;
-            font-size: 20px;
-            font-weight: bold;
-            background-color: #f1f8ff;
-            border: 2px solid #007acc;
-            border-radius: 12px;
-            color: #002060;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            max-width: fit-content;
-        }
-
-        footer.impressum {
-            background-color: rgba(245, 242, 242, 0.6);
-            color: #0a0a0a;
-            padding: 20px;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 40px;
-            border-top: 2px solid #ffffff30;
-        }
-
-        footer.impressum a {
-            color: #121111;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .tile {
-                padding: 10px;
-                font-size: 0.85rem;
-            }
-            .intro-text {
-                padding: 15px;
-                font-size: 14px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Italien 2027 – Unsere Spendenwand</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <header class="banner">
+    <img src="Basdorf-logo.jpg" alt="Basdorf Logo Links" />
     <h1>Italien 2027 – Unsere Spendenwand</h1>
-    <div class="intro-text">
-        <h2>Unser Ziel: Mit der Mannschaft zum Gardasee – und DU kannst das möglich machen!</h2>
-        <p>Wir sind eine Jugendfußballmannschaft aus <strong>Basdorf</strong> – voller Herz, Energie und Leidenschaft. Unser großer Traum: 2027 wollen wir mit unserem Team zum <strong>internationalen Ballfreunde-Turnier am Gardasee</strong> reisen.</p>
-        <p>Doch so ein Abenteuer kostet viel Geld. Deshalb starten wir diese Aktion:</p>
+    <img src="Basdorf-logo.jpg" alt="Basdorf Logo Rechts" />
+  </header>
 
-        <h3>Die Spendenwand – jeder Stein zählt!</h3>
-        <p>Wir gestalten ein riesiges <strong>2x1,5 Meter großes Stoffbanner</strong>, das unsere <strong>digitale Spendenwand</strong> abbildet. Jede Kachel auf dem Banner steht für eine Spende – klein oder groß.</p>
-        <p>🧒 Die Kinder nehmen dieses Banner mit zum Turnier – als Symbol für die Unterstützung aus der Heimat.</p>
-        <p>💼 Firmen und Sponsoren können ihr <strong>Logo oder ihren Namen</strong> auf einer Kachel platzieren – sichtbar für alle, auf Fotos, bei Spielen und im Stadionumfeld.</p>
-
-        <h3>Was deine Spende bewirkt</h3>
-        <ul>
-            <li>🚌 Sie hilft uns bei der <strong>Anreise und Unterkunft</strong></li>
-            <li>⚽ Sie deckt die <strong>Startgebühren und Verpflegungskosten</strong></li>
-            <li>💙 Sie schenkt den Kindern ein <strong>Erlebnis fürs Leben</strong></li>
-        </ul>
-
-        <h3>Warum du unterstützen solltest</h3>
-        <p>Weil <strong>Teamgeist, Freundschaft und Fairplay</strong> wichtig sind.  
-        Weil du unsere <strong>lokalen Talente</strong> fördern kannst.  
-        Und weil du Teil eines <strong>einzigartigen Projekts</strong> wirst.</p>
-
-        <h3>So einfach hilfst du mit</h3>
-        <p>Wähle eine freie Kachel auf unserer Spendenwand – ab 10 € bist du dabei.  
-        <strong>Firmen</strong>, die uns größer unterstützen, erhalten gut sichtbare <strong>Premium-Felder</strong> – perfekt fürs Logo!</p>
-
-        <p><strong>Du willst mehr wissen?</strong> Sprich uns direkt an (017660992584) – wir freuen uns über jede Unterstützung und natürlich darfst du auch Spenden, ohne eine Kachel zu erwerben!         
-        <a href="mailto:patrick-trettin@gmx.de?subject=Spendenwand%20Unterstützung&body=Hallo%2C%20ich%20möchte%20euch%20unterstützen%20und%20mein%20Logo%20beisteuern.">Logo & Fragen bitte an: patrick-trettin@gmx.de</a>
-        </p>
+  <div class="intro-text">
+    <h2>Unser Ziel: Mit der Mannschaft zum Gardasee – und DU kannst das möglich machen!</h2>
+    <p>Wir sind eine Jugendfußballmannschaft aus <strong>Basdorf</strong> – voller Herz, Energie und Leidenschaft. Unser großer Traum: 2027 wollen wir mit unserem Team zum <strong>internationalen Ballfreunde-Turnier am Gardasee</strong> reisen.</p>
+    <p>Doch so ein Abenteuer kostet viel Geld. Deshalb starten wir diese Aktion:</p>
+    <h3>Die Spendenwand – jeder Stein zählt!</h3>
+    <p>Wir gestalten ein riesiges <strong>2x1,5 Meter großes Stoffbanner</strong>, das unsere <strong>digitale Spendenwand</strong> abbildet. Jede Kachel auf dem Banner steht für eine Spende – klein oder groß.</p>
+    <p>🧒 Die Kinder nehmen dieses Banner mit zum Turnier – als Symbol für die Unterstützung aus der Heimat.</p>
+    <p>💼 Firmen und Sponsoren können ihr <strong>Logo oder ihren Namen</strong> auf einer Kachel platzieren – sichtbar für alle, auf Fotos, bei Spielen und im Stadionumfeld.</p>
+    <h3>Was deine Spende bewirkt</h3>
+    <ul>
+      <li>🚌 Sie hilft uns bei der <strong>Anreise und Unterkunft</strong></li>
+      <li>⚽ Sie deckt die <strong>Startgebühren und Verpflegungskosten</strong></li>
+      <li>💙 Sie schenkt den Kindern ein <strong>Erlebnis fürs Leben</strong></li>
+    </ul>
+    <h3>Welche Kachel passt zu dir?</h3>
+    <div class="spendenbox">
+      <ul class="preisliste">
+        <li>
+          <span class="preisfarbe standard"></span>
+          <strong>Teamfreund (10 € – 24,99 €):</strong><br>
+          ✔️ Dein Name auf dem Banner<br>
+          ✔️ Grüne Kachel in der Spendenwand
+        </li>
+        <li>
+          <span class="preisfarbe unterstützer"></span>
+          <strong>Teamspieler (25 € – 49,99 €):</strong><br>
+          ✔️ Dein Name auf dem Banner<br>
+          ✔️ Rote Kachel mit größerer Sichtbarkeit
+        </li>
+        <li>
+          <span class="preisfarbe gold"></span>
+          <strong>Fanheld (50 € – 99,99 €):</strong><br>
+          ✔️ Dein Name oder Logo auf dem Banner<br>
+          ✔️ Goldene Kachel mit Glanzeffekt
+        </li>
+        <li>
+          ⭐ <strong>Spezialkachel (ab 100 €):</strong><br>
+          ✔️ Individuelle Mini-Premium-Kachel<br>
+          ✔️ Ideal für kleine Firmenlogos oder Widmungen
+        </li>
+        <li>
+          🌟 <strong>Goldpartner-Ecke (ab 200 €):</strong><br>
+          ✔️ Große 2x2-Ecken-Kachel<br>
+          ✔️ Premium-Position + Logo
+        </li>
+        <li>
+          🏆 <strong>Hauptsponsor-Kachel (ab 500 €):</strong><br>
+          ✔️ XXL-Mittelfeld-Kachel (3x2 Felder)<br>
+          ✔️ Beste Sichtbarkeit für Hauptsponsoren
+        </li>
+        <li>
+          💙 <strong>Kleinere Spenden (1 € - 9,99 €):</strong><br>
+          ✔️ Jeder Euro hilft! Auch ohne Kachel – aber mit Dank aus tiefstem Herzen
+        </li>
+      </ul>
     </div>
-    <div id="grid-container"></div>
-    <div id="counter" class="counter-box"></div>
-    <footer class="impressum">
-        <h4>Impressum</h4>
-        <p>
-            Verantwortlich für den Inhalt gemäß § 5 TMG:<br>
-            Patrick Trettin<br>
-            Heidekrautweg 17<br>
-            16348 Wandlitz<br>
-            E-Mail: <a href="mailto:patrick-trettin@gmx.de">patrick-trettin@gmx.de</a>
-        </p>
-    </footer>
-    <script src="script.js"></script>
+    <p><strong>Du willst mehr wissen?</strong> Sprich uns direkt an (017660992584) oder <a href="mailto:patrick-trettin@gmx.de">schreib uns eine E-Mail</a>.</p>
+  </div>
+
+  <!-- TEAMFOTO -->
+  <div class="teamfoto">
+    <img src="team.jpg" alt="Unser Team beim Training" />
+    <p class="foto-beschreibung">💙 Unser Team beim Training – für diesen Traum kämpfen wir gemeinsam!</p>
+  </div>
+
+  <!-- SPENDENWAND -->
+  <div id="grid-container"></div>
+  <div id="counter" class="counter-box"></div>
+
+  <script src="script.js"></script>
+
+  <footer class="impressum">
+    <h4>Impressum</h4>
+    <p>
+      Verantwortlich für den Inhalt gemäß § 5 TMG:<br />
+      Patrick Trettin, Heidekrautweg 17, 16348 Wandlitz<br />
+      E-Mail: <a href="mailto:patrick-trettin@gmx.de">patrick-trettin@gmx.de</a>
+    </p>
+  </footer>
+
 </body>
 </html>

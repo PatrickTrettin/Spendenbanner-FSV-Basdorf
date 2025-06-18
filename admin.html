@@ -1,0 +1,116 @@
+<script>
+  const passwort = "Phoebeflo123?";
+  const eingabe = prompt("🔐 Admin-Bereich – Bitte Passwort eingeben:");
+
+  if (eingabe !== passwort) {
+    alert("❌ Zugriff verweigert!");
+    window.location.href = "https://google.de"; // oder z. B. zurück zur Hauptseite
+  }
+</script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Tool – Kacheleintrag</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef3f9;
+      padding: 40px;
+    }
+    #admin-tool {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 6px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007acc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005b99;
+    }
+    pre {
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="admin-tool">
+  <h3>🛠️ Admin Tool – Feldgenerator</h3>
+
+  <label for="feldtyp">Feld-Typ:</label>
+  <select id="feldtyp" onchange="umschaltenFeldtyp()">
+    <option value="normal">Normales Feld (mit Nummer)</option>
+    <option value="🌟 Premium TL">🌟 Premium TL</option>
+    <option value="🌟 Premium TR">🌟 Premium TR</option>
+    <option value="🌟 Premium BL">🌟 Premium BL</option>
+    <option value="🌟 Premium BR">🌟 Premium BR</option>
+    <option value="🏆 Premium Center">🏆 Premium Center</option>
+  </select>
+
+  <div id="nummernfeld-container">
+    <label for="feldnummer">Feldnummer:</label>
+    <input type="number" id="feldnummer" min="1" required>
+  </div>
+
+  <label for="typ">Inhaltstyp:</label>
+  <select id="typ">
+    <option value="text">Text</option>
+    <option value="bild">Bild</option>
+  </select>
+
+  <label for="inhalt">Inhalt (Text oder Dateiname):</label>
+  <input type="text" id="inhalt" required>
+
+  <button onclick="feldEintragGenerieren()">Eintrag generieren</button>
+
+  <pre id="ausgabe"></pre>
+</div>
+
+<script>
+function umschaltenFeldtyp() {
+  const typ = document.getElementById("feldtyp").value;
+  document.getElementById("nummernfeld-container").style.display = typ === "normal" ? "block" : "none";
+}
+
+function feldEintragGenerieren() {
+  const feldtyp = document.getElementById("feldtyp").value;
+  const nummer = document.getElementById("feldnummer").value;
+  const inhaltstyp = document.getElementById("typ").value;
+  const inhalt = document.getElementById("inhalt").value.trim();
+
+  if ((feldtyp === "normal" && !nummer) || !inhalt) {
+    alert("Bitte alle Felder ausfüllen!");
+    return;
+  }
+
+  const key = feldtyp === "normal" ? `Feld ${nummer}` : feldtyp;
+  const eintrag = `"${key}": { typ: "${inhaltstyp}", inhalt: "${inhalt}" },`;
+  document.getElementById("ausgabe").textContent = eintrag;
+}
+</script>
+
+</body>
+</html>
