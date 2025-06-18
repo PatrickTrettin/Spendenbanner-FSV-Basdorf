@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .banner {
@@ -214,24 +215,21 @@ body {
   50% { transform: scale(1.1); opacity: 0.85; }
 }
 
-/* 📱 Skalierung für kleinere Geräte */
+/* 📱 Skalierung mit ZOOM */
 @media (max-width: 1024px) {
   #grid-container {
-    transform: scale(0.9);
-    transform-origin: top center;
+    zoom: 0.9;
   }
 }
 
 @media (max-width: 768px) {
   #grid-container {
-    transform: scale(0.75);
-    transform-origin: top center;
+    zoom: 0.75;
   }
 }
 
 @media (max-width: 480px) {
   #grid-container {
-    transform: scale(0.6);
-    transform-origin: top center;
+    zoom: 0.6;
   }
 }
